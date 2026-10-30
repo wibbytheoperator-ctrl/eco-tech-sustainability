@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eco-Tech: Technology for a Sustainable Future</title>
+<style>
+:root{
+  --bg:#eef3ea; --surface:#ffffff; --ink:#14261c; --muted:#4d6154;
+  --moss:#1f5c3a; --lime:#b8e05a; --sky:#2a7f9e; --line:#cfdcc9;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0f1a14; --surface:#16251c; --ink:#e8f0e4; --muted:#9bb0a1; --moss:#7fcf9a; --lime:#b8e05a; --sky:#6cc3de; --line:#27402f; }
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:18px}
+h1,h2,h3,nav,button,.tag{font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;max-width:980px;margin:0 auto;flex-wrap:wrap;gap:8px}
+nav b{color:var(--moss);font-size:1.1rem}
+nav div a{margin-left:18px;text-decoration:none;font-size:.95rem}
+nav div a:hover{text-decoration:underline}
+.hero{padding:72px 0 56px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;max-width:14em;color:var(--moss)}
+.hero p{max-width:34em;margin-top:18px;color:var(--muted)}
+.btn{display:inline-block;margin-top:26px;background:var(--moss);color:var(--bg);padding:12px 22px;border-radius:6px;text-decoration:none;font-family:"Trebuchet MS",Arial,sans-serif;font-weight:bold}
+@media (prefers-color-scheme: dark){.btn{color:#0f1a14}}
+section{padding:52px 0;border-top:1px solid var(--line)}
+h2{font-size:1.8rem;color:var(--moss);margin-bottom:8px}
+.lead{color:var(--muted);max-width:38em;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.97rem}
+.tag{display:inline-block;background:var(--lime);color:#14261c;border-radius:20px;padding:2px 12px;font-size:.8rem;margin-bottom:10px}
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.calc label{display:block;margin:14px 0 4px;font-family:"Trebuchet MS",Arial,sans-serif;font-size:.95rem}
+.calc input[type=range]{width:100%}
+.result{margin-top:20px;padding:16px;border-left:5px solid var(--lime);background:var(--bg)}
+.result strong{font-size:1.5rem;color:var(--moss);font-family:"Trebuchet MS",Arial,sans-serif}
+.plan{list-style:none;padding:0;display:grid;gap:14px}
+.plan li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.plan input{width:22px;height:22px;margin-top:4px;accent-color:var(--moss);flex:none}
+.plan label{cursor:pointer}
+.plan b{font-family:"Trebuchet MS",Arial,sans-serif;display:block}
+.plan span{color:var(--muted);font-size:.95rem}
+.plan li.done{opacity:.65}
+.plan li.done b{text-decoration:line-through}
+.bar{height:14px;background:var(--line);border-radius:8px;overflow:hidden;margin:14px 0 6px}
+.bar i{display:block;height:100%;width:0;background:var(--moss);transition:width .3s}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.timeline .card{border-top:5px solid var(--sky)}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Main">
+    <b>EcoTech</b>
+    <div><a href="#why">Why it matters</a><a href="#tech">Green tech</a><a href="#calc">Calculator</a><a href="#plan">Action plan</a></div>
+  </nav>
+</header>
 
+<main>
+<div class="wrap hero">
+  <h1>Technology that works with the planet, not against it.</h1>
+  <p>Eco-tech uses clean energy, smart design, and less waste to meet today's needs without harming tomorrow. Learn the basics, check your own impact, and follow a simple plan.</p>
+  <a class="btn" href="#plan">Start the action plan</a>
+</div>
+
+<section id="why"><div class="wrap">
+  <h2>Why sustainability matters</h2>
+  <p class="lead">Devices, data centers, and electricity all use resources. Small, smart choices add up when millions of people make them.</p>
+  <div class="grid">
+    <div class="card"><h3>Climate change</h3><p>Burning fossil fuels for power releases greenhouse gases. Cleaner energy cuts these emissions.</p></div>
+    <div class="card"><h3>E-waste</h3><p>Old phones and computers contain metals that can be reused. Thrown away, they pollute soil and water.</p></div>
+    <div class="card"><h3>Resource use</h3><p>Making new devices uses water, minerals, and energy. Repairing and reusing saves all three.</p></div>
+  </div>
+</div></section>
+
+<section id="tech"><div class="wrap">
+  <h2>Green technologies</h2>
+  <p class="lead">These solutions already work today.</p>
+  <div class="grid">
+    <div class="card"><span class="tag">Energy</span><h3>Solar and wind power</h3><p>Produce electricity with no fuel and almost no emissions.</p></div>
+    <div class="card"><span class="tag">Efficiency</span><h3>Smart grids and IoT</h3><p>Sensors track power and water use so waste can be found and fixed.</p></div>
+    <div class="card"><span class="tag">Transport</span><h3>Electric vehicles</h3><p>Cut tailpipe pollution, especially when charged from clean power.</p></div>
+    <div class="card"><span class="tag">Circular</span><h3>Recycling and repair</h3><p>Reusing materials keeps devices out of landfills.</p></div>
+    <div class="card"><span class="tag">Digital</span><h3>Green computing</h3><p>Efficient code, cloud servers on renewable power, and sleep settings reduce energy use.</p></div>
+    <div class="card"><span class="tag">Water</span><h3>Smart irrigation</h3><p>Soil sensors water plants only when needed.</p></div>
+  </div>
+</div></section>
+
+<section id="calc"><div class="wrap">
+  <h2>Estimate your device energy use</h2>
+  <p class="lead">A rough estimate. Move the sliders to see yearly electricity and CO₂.</p>
+  <div class="calc">
+    <label for="hrs">Hours of device use per day: <b id="hrsV">6</b></label>
+    <input id="hrs" type="range" min="1" max="16" value="6">
+    <label for="watt">Average power of your devices (watts): <b id="wattV">60</b></label>
+    <input id="watt" type="range" min="10" max="300" step="5" value="60">
+    <label for="cut">Hours you could switch off or reduce per day: <b id="cutV">1</b></label>
+    <input id="cut" type="range" min="0" max="8" value="1">
+    <div class="result" aria-live="polite">
+      <p>Yearly use: <strong id="kwh">0</strong> kWh, about <strong id="co2">0</strong> kg CO₂</p>
+      <p>Savings from your reduction: <strong id="save">0</strong> kg CO₂ per year</p>
+    </div>
+    <p class="lead" style="margin:12px 0 0;font-size:.85rem">Assumes about 0.5 kg CO₂ per kWh. The real value depends on your local power source.</p>
+  </div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <h2>Action plan</h2>
+  <p class="lead">Tick each step as you complete it. Your progress is shown below.</p>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><i id="fill"></i></div>
+  <p id="pct" style="margin-bottom:18px;font-family:'Trebuchet MS',Arial,sans-serif">0% complete</p>
+  <ul class="plan" id="list">
+    <li><input type="checkbox" id="a1"><label for="a1"><b>Audit your devices</b><span>List what you own and what you actually use.</span></label></li>
+    <li><input type="checkbox" id="a2"><label for="a2"><b>Turn on power-saving settings</b><span>Enable sleep mode, dark mode, and auto-off.</span></label></li>
+    <li><input type="checkbox" id="a3"><label for="a3"><b>Unplug idle chargers and electronics</b><span>Use a power strip with a switch.</span></label></li>
+    <li><input type="checkbox" id="a4"><label for="a4"><b>Repair before replacing</b><span>Fix batteries and screens when possible.</span></label></li>
+    <li><input type="checkbox" id="a5"><label for="a5"><b>Recycle e-waste properly</b><span>Take old devices to a certified collection point.</span></label></li>
+    <li><input type="checkbox" id="a6"><label for="a6"><b>Switch to cleaner energy</b><span>Choose renewable power or install solar if you can.</span></label></li>
+    <li><input type="checkbox" id="a7"><label for="a7"><b>Share what you learned</b><span>Tell family, classmates, or your community.</span></label></li>
+  </ul>
+
+  <h2 style="margin-top:44px">Timeline</h2>
+  <div class="timeline">
+    <div class="card"><h3>This week</h3><p>Audit devices, adjust settings, unplug idle items.</p></div>
+    <div class="card"><h3>This month</h3><p>Repair or reuse, and recycle old e-waste.</p></div>
+    <div class="card"><h3>This year</h3><p>Move to renewable energy and buy efficient, long-lasting devices.</p></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">EcoTech © 2026. Small actions, repeated by many, change the future.</div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function calc(){
+  const h=+$('hrs').value,w=+$('watt').value,c=Math.min(+$('cut').value,h);
+  $('hrsV').textContent=h;$('wattV').textContent=w;$('cutV').textContent=c;
+  const kwh=h*w*365/1000;
+  $('kwh').textContent=kwh.toFixed(0);
+  $('co2').textContent=(kwh*0.5).toFixed(0);
+  $('save').textContent=(c*w*365/1000*0.5).toFixed(0);
+}
+['hrs','watt','cut'].forEach(i=>$(i).addEventListener('input',calc));
+calc();
+
+const boxes=[...document.querySelectorAll('#list input')];
+function progress(){
+  boxes.forEach(b=>b.closest('li').classList.toggle('done',b.checked));
+  const p=Math.round(boxes.filter(b=>b.checked).length/boxes.length*100);
+  $('fill').style.width=p+'%';
+  $('pct').textContent=p+'% complete';
+  $('bar').setAttribute('aria-valuenow',p);
+}
+boxes.forEach(b=>b.addEventListener('change',progress));
+</script>
+</body>
+</html>
+<p>Waray pa nag start an iba.</p>
