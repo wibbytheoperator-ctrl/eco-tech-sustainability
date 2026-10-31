@@ -1,631 +1,109 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EcoTech - Action Plan</title>
+    <title>Eco-Tech and Sustainability</title>
 
-<style>
-:root {
-  --bg:#eef3ea;
-  --surface:#ffffff;
-  --ink:#14261c;
-  --muted:#4d6154;
-  --moss:#1f5c3a;
-  --lime:#b8e05a;
-  --sky:#2a7f9e;
-  --line:#cfdcc9;
-}
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #f0f7f0;
+        }
 
-* {
-  box-sizing:border-box;
-  margin:0;
-}
+        header {
+            background-color: #237a45;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
 
-html {
-  scroll-behavior:smooth;
-}
+        nav {
+            background-color: #174d2c;
+            padding: 15px;
+            text-align: center;
+        }
 
-body {
-  font-family:Georgia,"Times New Roman",serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.65;
-  font-size:18px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
 
-h1,h2,h3,nav,button,.tag {
-  font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;
-}
+        section {
+            padding: 30px;
+            text-align: center;
+        }
 
-a {
-  color:var(--moss);
-}
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+        }
 
-:focus-visible {
-  outline:3px solid var(--sky);
-  outline-offset:3px;
-}
-
-.wrap {
-  max-width:980px;
-  margin:0 auto;
-  padding:0 20px;
-}
-
-header {
-  position:sticky;
-  top:0;
-  background:var(--bg);
-  border-bottom:1px solid var(--line);
-  z-index:5;
-}
-
-nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 20px;
-  max-width:980px;
-  margin:0 auto;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-nav b {
-  color:var(--moss);
-  font-size:1.1rem;
-}
-
-nav div a {
-  margin-left:18px;
-  text-decoration:none;
-  font-size:.95rem;
-}
-
-nav div a:hover {
-  text-decoration:underline;
-}
-
-.hero {
-  padding:65px 0 45px;
-}
-
-.hero h1 {
-  font-size:clamp(2.2rem,6vw,4rem);
-  line-height:1.1;
-  color:var(--moss);
-}
-
-.hero p {
-  max-width:38em;
-  margin-top:18px;
-  color:var(--muted);
-}
-
-.btn {
-  display:inline-block;
-  margin-top:22px;
-  background:var(--moss);
-  color:white;
-  padding:12px 22px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-section {
-  padding:45px 0;
-  border-top:1px solid var(--line);
-}
-
-h2 {
-  font-size:1.8rem;
-  color:var(--moss);
-  margin-bottom:8px;
-}
-
-.lead {
-  color:var(--muted);
-  max-width:38em;
-  margin-bottom:26px;
-}
-
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
-}
-
-.card {
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:22px;
-}
-
-.card h3 {
-  font-size:1.1rem;
-  margin-bottom:6px;
-}
-
-.card p {
-  color:var(--muted);
-  font-size:.97rem;
-  margin-bottom:10px;
-}
-
-.card a {
-  font-family:"Trebuchet MS",Arial,sans-serif;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-.card a:hover {
-  text-decoration:underline;
-}
-
-.tag {
-  display:inline-block;
-  background:var(--lime);
-  color:#14261c;
-  border-radius:20px;
-  padding:2px 12px;
-  font-size:.8rem;
-  margin-bottom:10px;
-}
-
-.plan {
-  list-style:none;
-  padding:0;
-  display:grid;
-  gap:14px;
-}
-
-.plan li {
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:18px 20px;
-  display:flex;
-  gap:14px;
-  align-items:flex-start;
-}
-
-.plan input {
-  width:22px;
-  height:22px;
-  margin-top:4px;
-  accent-color:var(--moss);
-  flex:none;
-}
-
-.plan label {
-  cursor:pointer;
-}
-
-.plan b {
-  font-family:"Trebuchet MS",Arial,sans-serif;
-  display:block;
-}
-
-.plan span {
-  color:var(--muted);
-  font-size:.95rem;
-}
-
-.plan li.done {
-  opacity:.65;
-}
-
-.plan li.done b {
-  text-decoration:line-through;
-}
-
-.bar {
-  height:14px;
-  background:var(--line);
-  border-radius:8px;
-  overflow:hidden;
-  margin:14px 0 6px;
-}
-
-.bar i {
-  display:block;
-  height:100%;
-  width:0;
-  background:var(--moss);
-  transition:width .3s;
-}
-
-.result {
-  margin-top:20px;
-  padding:16px;
-  border-left:5px solid var(--lime);
-  background:var(--surface);
-}
-
-.result strong {
-  font-size:1.5rem;
-  color:var(--moss);
-  font-family:"Trebuchet MS",Arial,sans-serif;
-}
-
-.timeline {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
-
-.timeline .card {
-  border-top:5px solid var(--sky);
-}
-
-.video-container {
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  border-radius:8px;
-}
-
-.video-container iframe {
-  display:block;
-  width:100%;
-  height:400px;
-  border:0;
-}
-
-footer {
-  padding:36px 0;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:.9rem;
-}
-
-@media(max-width:600px) {
-  nav {
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  nav div a {
-    margin-left:0;
-    margin-right:12px;
-  }
-
-  .video-container iframe {
-    height:230px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  * {
-    transition:none!important;
-    scroll-behavior:auto!important;
-  }
-}
-</style>
+        footer {
+            background-color: #237a45;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-  <nav aria-label="Main">
-    <b>EcoTech</b>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="green-tech.html">Green Tech</a>
-      <a href="action-plan.html">Action Plan</a>
-    </div>
-  </nav>
+    <h1>Eco-Tech and Sustainability</h1>
+    <p>Technology for a Greener Future</p>
 </header>
 
-<main>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#technology">Technology</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<div class="wrap hero">
-  <h1>Take Action for a Greener Future</h1>
-  <p>
-    Small actions can make a big difference.
-    Discover simple ways to reduce your carbon footprint,
-    protect natural resources, and help create a sustainable future.
-  </p>
-  <a class="btn" href="#checklist">Start Your Checklist</a>
-</div>
-
-<section id="checklist">
-<div class="wrap">
-
-  <h2>My Carbon Footprint Checklist</h2>
-
-  <p class="lead">
-    Check the eco-friendly habits you practice every day.
-    Every small action helps reduce your carbon footprint
-    and protect our planet.
-  </p>
-
-  <div class="bar"
-       role="progressbar"
-       aria-valuemin="0"
-       aria-valuemax="100"
-       aria-valuenow="0"
-       id="carbonBar">
-    <i id="carbonFill"></i>
-  </div>
-
-  <p id="carbonPercent"
-     style="margin-bottom:18px;font-family:'Trebuchet MS',Arial,sans-serif;">
-    0% completed
-  </p>
-
-  <ul class="plan" id="carbonList">
-
-    <li>
-      <input type="checkbox" id="carbon1">
-      <label for="carbon1">
-        <b>Save Electricity</b>
-        <span>Turn off lights, fans, and appliances when not in use.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon2">
-      <label for="carbon2">
-        <b>Use Reusable Items</b>
-        <span>Bring reusable water bottles, bags, and food containers.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon3">
-      <label for="carbon3">
-        <b>Reduce Plastic Waste</b>
-        <span>Avoid single-use plastics and choose eco-friendly alternatives.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon4">
-      <label for="carbon4">
-        <b>Practice Proper Waste Segregation</b>
-        <span>Separate biodegradable, recyclable, and non-biodegradable waste.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon5">
-      <label for="carbon5">
-        <b>Save Water</b>
-        <span>Turn off faucets when brushing your teeth and avoid wasting water.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon6">
-      <label for="carbon6">
-        <b>Choose Eco-Friendly Transportation</b>
-        <span>Walk, ride a bicycle, or use public transportation when possible.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon7">
-      <label for="carbon7">
-        <b>Plant and Care for Trees</b>
-        <span>Plant trees and help maintain green spaces in your community.</span>
-      </label>
-    </li>
-
-    <li>
-      <input type="checkbox" id="carbon8">
-      <label for="carbon8">
-        <b>Recycle and Reuse Materials</b>
-        <span>Reuse paper, bottles, and other materials instead of throwing them away.</span>
-      </label>
-    </li>
-
-  </ul>
-
-  <div class="result">
-    <p><strong id="carbonScore">0 / 8</strong></p>
-    <p>Eco-friendly actions completed!</p>
-    <p id="carbonMessage">Start making a difference today!</p>
-  </div>
-
-</div>
+<section id="home">
+    <h2>Welcome to Eco-Tech!</h2>
+    <p>Let's protect our planet through
+    technology and innovation.</p>
 </section>
 
-<section id="timeline">
-<div class="wrap">
-
-  <h2>Our Action Timeline</h2>
-
-  <p class="lead">
-    Follow these simple steps to develop
-    environmentally friendly habits.
-  </p>
-
-  <div class="timeline">
-
-    <div class="card">
-      <h3>This Week</h3>
-      <p>Save electricity, reduce plastic use, and practice proper waste segregation.</p>
-    </div>
-
-    <div class="card">
-      <h3>This Month</h3>
-      <p>Plant trees, recycle materials, and conserve water.</p>
-    </div>
-
-    <div class="card">
-      <h3>This Year</h3>
-      <p>Continue practicing sustainable habits and encourage others to protect the environment.</p>
-    </div>
-
-  </div>
-
-</div>
+<section id="about">
+    <h2>About Sustainability</h2>
+    <p>Sustainability means protecting
+    the environment for future generations.</p>
 </section>
 
-<section id="resources">
-<div class="wrap">
-
-  <h2>Environmental Resources</h2>
-
-  <p class="lead">
-    Explore these trusted websites to learn more about
-    environmental protection and sustainability.
-  </p>
-
-  <div class="grid">
+<section id="technology">
+    <h2>Eco-Friendly Technology</h2>
 
     <div class="card">
-      <span class="tag">Environment</span>
-      <h3>United Nations Environment Programme</h3>
-      <p>
-        Discover global environmental issues,
-        sustainability programs, and ways to protect nature.
-      </p>
-      <a href="https://www.unep.org/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Visit Website →
-      </a>
+        <h3>Solar Energy</h3>
+        <p>Uses sunlight to produce electricity.</p>
     </div>
 
     <div class="card">
-      <span class="tag">Wildlife</span>
-      <h3>World Wildlife Fund</h3>
-      <p>
-        Learn how to protect endangered animals,
-        forests, oceans, and biodiversity.
-      </p>
-      <a href="https://www.worldwildlife.org/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Visit Website →
-      </a>
+        <h3>Wind Energy</h3>
+        <p>Uses wind to generate clean energy.</p>
     </div>
 
     <div class="card">
-      <span class="tag">Climate</span>
-      <h3>NASA Climate Change</h3>
-      <p>
-        Explore scientific information about
-        global warming and climate change.
-      </p>
-      <a href="https://climate.nasa.gov/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Visit Website →
-      </a>
+        <h3>Recycling</h3>
+        <p>Reduces waste and protects nature.</p>
     </div>
-
-  </div>
-
-</div>
 </section>
 
-<section id="video">
-<div class="wrap">
-
-  <h2>Watch and Learn</h2>
-
-  <p class="lead">
-    Watch this educational video to understand
-    the importance of protecting our environment.
-  </p>
-
-  <div class="card">
-
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/EtW2rrLHs08"
-        title="Environmental Awareness Video"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <h3 style="margin-top:15px;">
-      Environmental Awareness
-    </h3>
-
-    <p>
-      Learn about the importance of taking care
-      of our planet and protecting natural resources.
-    </p>
-
-  </div>
-
-</div>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: ecotech@gmail.com</p>
 </section>
-
-</main>
 
 <footer>
-<div class="wrap">
-  EcoTech © 2026. Small actions, repeated by many, change the future.
-</div>
+    <p>© 2026 Eco-Tech and Sustainability</p>
 </footer>
-
-<script>
-const carbonBoxes = document.querySelectorAll(
-  '#carbonList input[type="checkbox"]'
-);
-
-function updateCarbonProgress() {
-
-  const completed = [...carbonBoxes]
-    .filter(box => box.checked).length;
-
-  const total = carbonBoxes.length;
-
-  const percentage = Math.round(
-    (completed / total) * 100
-  );
-
-  document.getElementById('carbonFill')
-    .style.width = percentage + '%';
-
-  document.getElementById('carbonPercent')
-    .textContent = percentage + '% completed';
-
-  document.getElementById('carbonBar')
-    .setAttribute('aria-valuenow', percentage);
-
-  document.getElementById('carbonScore')
-    .textContent = completed + ' / ' + total;
-
-  document.querySelectorAll('#carbonList li')
-    .forEach(item => {
-      const checkbox = item.querySelector('input');
-      item.classList.toggle('done', checkbox.checked);
-    });
-
-  let message = 'Start making a difference today!';
-
-  if (percentage === 100) {
-    message = 'Amazing! You completed all the eco-friendly actions!';
-  } else if (percentage >= 75) {
-    message = 'Excellent! You are helping protect our planet!';
-  } else if (percentage >= 50) {
-    message = 'Great job! Keep practicing green habits!';
-  } else if (percentage >= 25) {
-    message = 'Good start! Keep going!';
-  }
-
-  document.getElementById('carbonMessage')
-    .textContent = message;
-}
-
-carbonBoxes.forEach(box => {
-  box.addEventListener('change', updateCarbonProgress);
-});
-
-updateCarbonProgress();
-</script>
 
 </body>
 </html>
