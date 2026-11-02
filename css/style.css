@@ -1,1 +1,102 @@
+/* =========================
+GENERAL WEBSITE STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f5f8f2;
+color: #263b2c;
+line-height: 1.6;
+}
+
+/* =========================
+HEADER AND NAVIGATION
+========================= */
+
+header {
+background-color: #174d35;
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+nav {
+background-color: #246b49;
+padding: 12px;
+text-align: center;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-weight: bold;
+}
+
+nav a:hover {
+color: #a6d98c;
+}
+
+/* =========================
+MAIN CONTENT
+========================= */
+
+section {
+padding: 40px 8%;
+}
+
+h1, h2, h3 {
+color: #174d35;
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card {
+background-color: white;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+transition: transform 0.3s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+background-color: #174d35;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+/* =========================
+RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
+```
+nav a {
+    display: inline-block;
+    margin: 6px;
+}
+
+section {
+    padding: 25px 5%;
+}
+```
+
+}
 
