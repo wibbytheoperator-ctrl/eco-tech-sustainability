@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eco-Tech: Technology for a Sustainable Future</title>
@@ -38,9 +37,6 @@ h2{font-size:1.8rem;color:var(--moss);margin-bottom:8px}
 .card h3{font-size:1.1rem;margin-bottom:6px}
 .card p{color:var(--muted);font-size:.97rem}
 .tag{display:inline-block;background:var(--lime);color:#14261c;border-radius:20px;padding:2px 12px;font-size:.8rem;margin-bottom:10px}
-.calc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
-.calc label{display:block;margin:14px 0 4px;font-family:"Trebuchet MS",Arial,sans-serif;font-size:.95rem}
-.calc input[type=range]{width:100%}
 .result{margin-top:20px;padding:16px;border-left:5px solid var(--lime);background:var(--bg)}
 .result strong{font-size:1.5rem;color:var(--moss);font-family:"Trebuchet MS",Arial,sans-serif}
 .plan{list-style:none;padding:0;display:grid;gap:14px}
@@ -53,8 +49,6 @@ h2{font-size:1.8rem;color:var(--moss);margin-bottom:8px}
 .plan li.done b{text-decoration:line-through}
 .bar{height:14px;background:var(--line);border-radius:8px;overflow:hidden;margin:14px 0 6px}
 .bar i{display:block;height:100%;width:0;background:var(--moss);transition:width .3s}
-.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.timeline .card{border-top:5px solid var(--sky)}
 .card a{display:inline-block;margin-top:12px;color:var(--moss);font-weight:bold;font-family:"Trebuchet MS",Arial,sans-serif;font-size:.95rem}
 .card a:hover{text-decoration:none}
 #carbonPercent{color:var(--muted);font-size:.95rem}
@@ -67,7 +61,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <header>
   <nav aria-label="Main">
     <b>EcoTech</b>
-    <div><a href="#why">Why it matters</a><a href="#tech">Green tech</a><a href="#calc">Calculator</a><a href="#carbon">Checklist</a><a href="#plan">Action plan</a><a href="#resources">Resources</a><a href="#video">Video</a></div>
+    <div><a href="#plan">Action plan</a><a href="#carbon">Checklist</a><a href="#resources">Resources</a><a href="#video">Video</a></div>
   </nav>
 </header>
 
@@ -78,49 +72,24 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   <a class="btn" href="#plan">Start the action plan</a>
 </div>
 
-<section id="why"><div class="wrap">
-  <h2>Why sustainability matters</h2>
-  <p class="lead">Devices, data centers, and electricity all use resources. Small, smart choices add up when millions of people make them.</p>
-  <div class="grid">
-    <div class="card"><h3>Climate change</h3><p>Burning fossil fuels for power releases greenhouse gases. Cleaner energy cuts these emissions.</p></div>
-    <div class="card"><h3>E-waste</h3><p>Old phones and computers contain metals that can be reused. Thrown away, they pollute soil and water.</p></div>
-    <div class="card"><h3>Resource use</h3><p>Making new devices uses water, minerals, and energy. Repairing and reusing saves all three.</p></div>
-  </div>
-</div></section>
-
-<section id="tech"><div class="wrap">
-  <h2>Green technologies</h2>
-  <p class="lead">These solutions already work today.</p>
-  <div class="grid">
-    <div class="card"><span class="tag">Energy</span><h3>Solar and wind power</h3><p>Produce electricity with no fuel and almost no emissions.</p></div>
-    <div class="card"><span class="tag">Efficiency</span><h3>Smart grids and IoT</h3><p>Sensors track power and water use so waste can be found and fixed.</p></div>
-    <div class="card"><span class="tag">Transport</span><h3>Electric vehicles</h3><p>Cut tailpipe pollution, especially when charged from clean power.</p></div>
-    <div class="card"><span class="tag">Circular</span><h3>Recycling and repair</h3><p>Reusing materials keeps devices out of landfills.</p></div>
-    <div class="card"><span class="tag">Digital</span><h3>Green computing</h3><p>Efficient code, cloud servers on renewable power, and sleep settings reduce energy use.</p></div>
-    <div class="card"><span class="tag">Water</span><h3>Smart irrigation</h3><p>Soil sensors water plants only when needed.</p></div>
-  </div>
-</div></section>
-
-<section id="calc"><div class="wrap">
-  <h2>Estimate your device energy use</h2>
-  <p class="lead">A rough estimate. Move the sliders to see yearly electricity and CO₂.</p>
-  <div class="calc">
-    <label for="hrs">Hours of device use per day: <b id="hrsV">6</b></label>
-    <input id="hrs" type="range" min="1" max="16" value="6">
-    <label for="watt">Average power of your devices (watts): <b id="wattV">60</b></label>
-    <input id="watt" type="range" min="10" max="300" step="5" value="60">
-    <label for="cut">Hours you could switch off or reduce per day: <b id="cutV">1</b></label>
-    <input id="cut" type="range" min="0" max="8" value="1">
-    <div class="result" aria-live="polite">
-      <p>Yearly use: <strong id="kwh">0</strong> kWh, about <strong id="co2">0</strong> kg CO₂</p>
-      <p>Savings from your reduction: <strong id="save">0</strong> kg CO₂ per year</p>
-    </div>
-    <p class="lead" style="margin:12px 0 0;font-size:.85rem">Assumes about 0.5 kg CO₂ per kWh. The real value depends on your local power source.</p>
-  </div>
+<section id="plan"><div class="wrap">
+  <h2>Action plan</h2>
+  <p class="lead">Tick each step as you complete it. Your progress is shown below.</p>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><i id="fill"></i></div>
+  <p id="pct" style="margin-bottom:18px;font-family:'Trebuchet MS',Arial,sans-serif">0% complete</p>
+  <ul class="plan" id="list">
+    <li><input type="checkbox" id="a1"><label for="a1"><b>Audit your devices</b><span>List what you own and what you actually use.</span></label></li>
+    <li><input type="checkbox" id="a2"><label for="a2"><b>Turn on power-saving settings</b><span>Enable sleep mode, dark mode, and auto-off.</span></label></li>
+    <li><input type="checkbox" id="a3"><label for="a3"><b>Unplug idle chargers and electronics</b><span>Use a power strip with a switch.</span></label></li>
+    <li><input type="checkbox" id="a4"><label for="a4"><b>Repair before replacing</b><span>Fix batteries and screens when possible.</span></label></li>
+    <li><input type="checkbox" id="a5"><label for="a5"><b>Recycle e-waste properly</b><span>Take old devices to a certified collection point.</span></label></li>
+    <li><input type="checkbox" id="a6"><label for="a6"><b>Switch to cleaner energy</b><span>Choose renewable power or install solar if you can.</span></label></li>
+    <li><input type="checkbox" id="a7"><label for="a7"><b>Share what you learned</b><span>Tell family, classmates, or your community.</span></label></li>
+  </ul>
 </div></section>
 
 <section id="carbon"><div class="wrap">
-  <h2>My Carbon Footprint Checklist</h2>
+  <h2>Carbon Footprint Checklist</h2>
   <p class="lead">Check the eco-friendly habits you practice every day. Every small action helps reduce your carbon footprint and protect our planet.</p>
   <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="carbonBar"><i id="carbonFill"></i></div>
   <p id="carbonPercent" style="margin-bottom:18px;font-family:'Trebuchet MS',Arial,sans-serif">0% completed</p>
@@ -141,28 +110,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   </div>
 </div></section>
 
-<section id="plan"><div class="wrap">
-  <h2>Action plan</h2>
-  <p class="lead">Tick each step as you complete it. Your progress is shown below.</p>
-  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><i id="fill"></i></div>
-  <p id="pct" style="margin-bottom:18px;font-family:'Trebuchet MS',Arial,sans-serif">0% complete</p>
-  <ul class="plan" id="list">
-    <li><input type="checkbox" id="a1"><label for="a1"><b>Audit your devices</b><span>List what you own and what you actually use.</span></label></li>
-    <li><input type="checkbox" id="a2"><label for="a2"><b>Turn on power-saving settings</b><span>Enable sleep mode, dark mode, and auto-off.</span></label></li>
-    <li><input type="checkbox" id="a3"><label for="a3"><b>Unplug idle chargers and electronics</b><span>Use a power strip with a switch.</span></label></li>
-    <li><input type="checkbox" id="a4"><label for="a4"><b>Repair before replacing</b><span>Fix batteries and screens when possible.</span></label></li>
-    <li><input type="checkbox" id="a5"><label for="a5"><b>Recycle e-waste properly</b><span>Take old devices to a certified collection point.</span></label></li>
-    <li><input type="checkbox" id="a6"><label for="a6"><b>Switch to cleaner energy</b><span>Choose renewable power or install solar if you can.</span></label></li>
-    <li><input type="checkbox" id="a7"><label for="a7"><b>Share what you learned</b><span>Tell family, classmates, or your community.</span></label></li>
-  </ul>
-
-  <h2 style="margin-top:44px">Timeline</h2>
-  <div class="timeline">
-    <div class="card"><h3>This week</h3><p>Audit devices, adjust settings, unplug idle items.</p></div>
-    <div class="card"><h3>This month</h3><p>Repair or reuse, and recycle old e-waste.</p></div>
-    <div class="card"><h3>This year</h3><p>Move to renewable energy and buy efficient, long-lasting devices.</p></div>
-  </div>
-
+<section id="resourcesSection"><div class="wrap">
   <h2 id="resources" style="margin-top:44px">Environmental Resources</h2>
   <p class="lead">Explore these trusted websites to learn more about environmental protection and sustainability.</p>
   <div class="grid">
@@ -186,16 +134,6 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 <script>
 const $=id=>document.getElementById(id);
-function calc(){
-  const h=+$('hrs').value,w=+$('watt').value,c=Math.min(+$('cut').value,h);
-  $('hrsV').textContent=h;$('wattV').textContent=w;$('cutV').textContent=c;
-  const kwh=h*w*365/1000;
-  $('kwh').textContent=kwh.toFixed(0);
-  $('co2').textContent=(kwh*0.5).toFixed(0);
-  $('save').textContent=(c*w*365/1000*0.5).toFixed(0);
-}
-['hrs','watt','cut'].forEach(i=>$(i).addEventListener('input',calc));
-calc();
 
 const boxes=[...document.querySelectorAll('#list input')];
 function progress(){
